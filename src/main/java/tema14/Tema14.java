@@ -9,6 +9,8 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+//NESTA CLASE IMOS GARDAR OBXECTOS Persona QUE ESTÁN NUN ARRAY A UN ARQUIVO fichero.dat
+//NA SEGUNDA PARTE, IMOS LER ESE ARQUIVO fichero.dat E GARDAR OS OBXECTOS Persona ATOPADOS NUN ArrayList Personas 
 public class Tema14 {
 
     public static void main(String[] args) {
@@ -28,12 +30,12 @@ public class Tema14 {
             ex.printStackTrace();
         }
         
-        //2º LECTURA: ir lendo un ficheiro e engadindo os obxectos nun arrayList da clase Persona
+        //2º LECTURA: ir lendo un ficheiro e engadindo os obxectos nun arrayList de obxectos da clase Persona
         List<Persona> personas = new ArrayList<>(); //creamos o arraylist vacío
         boolean eof = false; //variable que representa el final del fichero
         
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("fichero.dat"))) { 
-            while (!eof) {
+            while (!eof) {  //mentres non cheguemos ao final do arquivo...
                 personas.add((Persona) ois.readObject()); //imos engadindo no array personas cada Obxecto que atopamos no ficheiro
             }
         }catch (EOFException e) { 
