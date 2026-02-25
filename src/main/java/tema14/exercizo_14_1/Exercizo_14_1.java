@@ -16,6 +16,7 @@ public class Exercizo_14_1 {
         Scanner teclado = new Scanner(System.in);
         Path ruta = Path.of("archivos\\fich01.txt");
         
+        //escribo nun arquivo as filas que o usuario vai metende
         try(BufferedWriter bw = Files.newBufferedWriter(ruta,StandardCharsets.UTF_8, StandardOpenOption.CREATE)){
             String linea = "";
             while(!linea.equalsIgnoreCase("FIN")){
@@ -28,6 +29,7 @@ public class Exercizo_14_1 {
            e.printStackTrace();
         }
         
+        //mostro por pantalla as filas do arquivo
         try(BufferedReader br = Files.newBufferedReader(ruta, StandardCharsets.UTF_8)){
             String linea;
             int lin = 1;
